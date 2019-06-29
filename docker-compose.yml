@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+   frontend: 
+      container_name: productivity_frontend
+      build: ./frontend
+      image: productivity_frontend
+      restart: always
+      ports:
+         - 4200:4200
+         - 49153:49153
+      volumes:
+         - "./frontend:/app"
+         - "/app/node_modules"
+   
+   backend:
+      container_name: productivity_backend
+      build: ./backend
+      image: productivity_backend
+      restart: always
+      ports:
+         - 3000:3000
+         - 9229:9229
+      volumes:
+         - "./backend:/app"
+         - "/app/node_modules"
+      command: ["node_modules/nodemon/bin/nodemon", "--inspect=0.0.0.0", "./bin/www"]
+
+   nginx:
+      container_name: productivity_nginx
+      image: nginx
+      restart: always
+      ports: 
+         - 80:80
+         - 443:443
+      volumes:
+         - ./nginx:/etc/nginx
+

@@ -1,0 +1,6 @@
+[submodule "ProdBackend"]
+	path = ProdBackend
+	url = https://github.com/JustARand0m/ProdBackend
+[submodule "ProdFrontend"]
+	path = ProdFrontend
+	url = https://github.com/JustARand0m/ProdFrontend
