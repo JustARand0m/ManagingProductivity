@@ -69,7 +69,7 @@ services:
          - productivity_backend_network
       volumes:
          - ./mysql/data:/var/lib/mysql
-
+         - ./mysql/init:/docker-entrypoint-initdb.d/:ro
 
 networks:
    productivity_frontend_network:
