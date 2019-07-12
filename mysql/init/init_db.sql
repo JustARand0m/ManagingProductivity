@@ -7,6 +7,8 @@ FLUSH PRIVILEGES;
 CREATE DATABASE IF NOT EXISTS productivity;
 CREATE TABLE todos (
     id INT PRIMARY KEY,
-    isChecked BIT,
-    todoMsg VARCHAR(255)
+    isDone INT,
+    todoMsg VARCHAR(255),
+    importance INT,
+    endDate DATE
 );
