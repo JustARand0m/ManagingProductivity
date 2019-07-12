@@ -1,4 +1,8 @@
-GRANT ALL ON *.* TO root@'%';
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';
+
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+
+FLUSH PRIVILEGES;
 
 CREATE DATABASE IF NOT EXISTS productivity;
 CREATE TABLE todos (

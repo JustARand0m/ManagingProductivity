@@ -31,7 +31,7 @@ services:
       volumes:
          - "./ProdBackend:/app"
          - "/app/node_modules"
-      command: ["node_modules/nodemon/bin/nodemon", "--inspect=0.0.0.0", "./bin/www"]
+      command: ["node_modules/nodemon/bin/nodemon", "--inspect=0.0.0.0:9229", "./bin/www"]
       networks:
          - productivity_backend_network
       depends_on:
