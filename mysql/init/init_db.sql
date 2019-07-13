@@ -5,10 +5,39 @@ GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
 CREATE DATABASE IF NOT EXISTS productivity;
+
 CREATE TABLE todos (
     id INT PRIMARY KEY,
     isDone INT,
     todoMsg VARCHAR(255),
     importance INT,
     endDate DATE
+);
+
+CREATE TABLE Phases (
+    dayNr INT NOT NULL,
+    phase INT NOT NULL,
+    PRIMARY KEY(dayNr, phase)
+);
+
+CREATE TABLE trainingsPlanRows (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    phase INT,
+    dayNr INT,
+    muscle VARCHAR(255),
+    excercise VARCHAR(255),
+    amountOfSets INT,
+    repeatitions INT,
+    pauseInbetween INT,
+    startingWeight INT
+);
+
+CREATE TABLE repeatitionsDone (
+    id INT NOT NULL,
+    repeatition INT
+);
+
+CREATE TABLE weightsUsed (
+    id INT NOT NULL,
+    weightUsed INT
 );
