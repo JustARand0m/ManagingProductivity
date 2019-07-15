@@ -7,17 +7,11 @@ FLUSH PRIVILEGES;
 CREATE DATABASE IF NOT EXISTS productivity;
 
 CREATE TABLE todos (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     isDone INT,
     todoMsg VARCHAR(255),
     importance INT,
     endDate DATE
-);
-
-CREATE TABLE Phases (
-    dayNr INT NOT NULL,
-    phase INT NOT NULL,
-    PRIMARY KEY(dayNr, phase)
 );
 
 CREATE TABLE trainingsPlanRows (
