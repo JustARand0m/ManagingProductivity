@@ -10,7 +10,7 @@ CREATE TABLE todos (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     isDone INT,
     todoMsg VARCHAR(255),
-    importance INT,
+    importance INT NOT NULL CHECK(importance BETWEEN 0 AND 2),
     endDate DATE
 );
 
