@@ -11,7 +11,9 @@ CREATE TABLE todos (
     isDone INT,
     todoMsg VARCHAR(255),
     importance INT NOT NULL CHECK(importance BETWEEN 0 AND 2),
-    endDate DATE
+    endDate DATE,
+    details VARCHAR(255),
+    imgUrl VARCHAR(255)
 );
 
 CREATE TABLE trainingsPlanRows (
