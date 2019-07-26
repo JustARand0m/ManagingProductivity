@@ -6,6 +6,31 @@ FLUSH PRIVILEGES;
 
 CREATE DATABASE IF NOT EXISTS productivity;
 
+CREATE TABLE user (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    email VARCHAR(255) UNIQUE,
+    emailVerified INT,
+    username VARCHAR(255) UNIQUE,
+    password VARCHAR(255)
+);
+
+CREATE TABLE foodDaily (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    dayNr DATE,
+    fat INT,
+    carb INT,
+    protein INT,
+    userId INT
+);
+
+CREATE TABLE food (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    foodName VARCHAR(255),
+    fat INT,
+    carb INT,
+    protein INT
+);
+
 CREATE TABLE todos (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     isDone INT,
