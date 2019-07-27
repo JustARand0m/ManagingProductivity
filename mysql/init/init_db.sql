@@ -28,7 +28,8 @@ CREATE TABLE food (
     foodName VARCHAR(255),
     fat INT,
     carb INT,
-    protein INT
+    protein INT,
+    userId INT
 );
 
 CREATE TABLE todos (
@@ -38,7 +39,8 @@ CREATE TABLE todos (
     importance INT NOT NULL CHECK(importance BETWEEN 0 AND 3),
     endDate DATE,
     details VARCHAR(255),
-    imgUrl VARCHAR(255)
+    imgUrl VARCHAR(255),
+    userId INT
 );
 
 CREATE TABLE trainingsPlanRows (
