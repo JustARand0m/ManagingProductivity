@@ -1,6 +1,6 @@
 /**
 * Modified code form https://github.com/nmaster/usdanl-sr28-mysql/blob/master/sr28_schema.sql 
-* to work with docker
+* to work with docker dataset comes from USDA
 */
 
 CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';
@@ -9,7 +9,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
 
 FLUSH PRIVILEGES;
 
-CREATE DATABASE IF NOT EXISTS usdanlsr28;
+CREATE DATABASE IF NOT EXISTS productivity_db_nutrition;
 
 /*
 * Source Code File
