@@ -1,2 +1,5 @@
 mysql/data/*
 !mysql/data/.gitkeep
+
+nutrition_mysql/data/*
+!nutrition_mysql/data/.gitkeep
