@@ -14,7 +14,7 @@ CREATE TABLE user (
     password VARCHAR(255)
 );
 
-CREATE TABLE foodDaily (
+CREATE TABLE dailyNutrient (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     dayNr DATE,
     fat INT,
@@ -23,12 +23,14 @@ CREATE TABLE foodDaily (
     userId INT
 );
 
-CREATE TABLE food (
+CREATE TABLE ownFood (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     foodName VARCHAR(255),
-    fat INT,
-    carb INT,
-    protein INT,
+    description VARCHAR(255),
+    ManufacName VARCHAR(255),
+    fat DECIMAL(4, 2),
+    carb DECIMAL(4, 2),
+    protein DECIMAL(4, 2),
     userId INT
 );
 
