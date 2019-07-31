@@ -17,9 +17,12 @@ CREATE TABLE user (
 CREATE TABLE dailyNutrient (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     dayNr DATE,
-    fat INT,
-    carb INT,
-    protein INT,
+    fatGoal DECIMAL(7, 2),
+    carbGoal DECIMAL(7, 2),
+    proteinGoal DECIMAL(7, 2),
+    fat DECIMAL(7, 2),
+    carb DECIMAL(7, 2),
+    protein DECIMAL(7, 2),
     userId INT
 );
 
@@ -28,10 +31,11 @@ CREATE TABLE ownFood (
     foodName VARCHAR(255),
     description VARCHAR(255),
     ManufacName VARCHAR(255),
-    fat DECIMAL(4, 2),
-    carb DECIMAL(4, 2),
-    protein DECIMAL(4, 2),
-    userId INT
+    fat DECIMAL(7, 2),
+    carb DECIMAL(7, 2),
+    protein DECIMAL(7, 2),
+    userId INT,
+    day_id INT
 );
 
 CREATE TABLE todos (
