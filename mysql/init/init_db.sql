@@ -28,14 +28,24 @@ CREATE TABLE dailyNutrient (
 
 CREATE TABLE ownFood (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    foodName VARCHAR(255),
-    description VARCHAR(255),
+    NDB_NO INT,
+    Long_Desc VARCHAR(255),
+    Shrt_Desc VARCHAR(255),
     ManufacName VARCHAR(255),
+    SciName VARCHAR(255),
+    FdGrp_Desc VARCHAR(255),
+    ComName VARCHAR(255),
+    N_Factor INT,
+    CHO_Factor INT,
+    Fat_Factor INT,
+    Pro_Factor INT,
     fat DECIMAL(7, 2),
     carb DECIMAL(7, 2),
     protein DECIMAL(7, 2),
     userId INT,
-    day_id INT
+    day_id INT,
+    weight INT,
+    meal VARCHAR(255)
 );
 
 CREATE TABLE todos (
