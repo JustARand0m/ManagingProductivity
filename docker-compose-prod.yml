@@ -1,0 +1,75 @@
+version: '3'
+
+services:
+   frontend: 
+      container_name: productivity_frontend_production
+      build: 
+        context: ./ProdFrontend
+        dockerfile: Dockerfile-prod
+      image: productivity_frontend_production
+      restart: always
+      networks:
+         - productivity_frontend_network
+
+   backend:
+      container_name: productivity_backend_production
+      build: ./ProdBackend
+      image: productivity_backend_production
+      restart: always
+      command: ["node", "./bin/www"]
+      networks:
+         - productivity_backend_network
+      depends_on:
+         - db
+
+
+   nginx:
+      container_name: productivity_nginx_production
+      image: nginx
+      restart: always
+      ports: 
+         - 80:80
+         - 443:443
+      volumes:
+         - ./nginx/nginx-prod.conf:/etc/nginx/nginx.conf
+      networks:
+         - productivity_frontend_network
+         - productivity_backend_network
+
+
+   db:
+      container_name: producitvity_db
+      image: mysql:5.7.26
+      restart: always
+      command: --default-authentication-plugin=mysql_native_password
+      environment:
+         MYSQL_DATABASE: productivity_db
+         MYSQL_USER: admin
+         MYSQL_PASSWORD: admin
+         MYSQL_ROOT_PASSWORD: admin
+      networks:
+         - productivity_backend_network
+      volumes:
+         - ./mysql/data:/var/lib/mysql
+         - ./mysql/init:/docker-entrypoint-initdb.d/:ro
+
+   db-nutrition:
+      container_name: productivity_db_nutrition
+      image: mysql:5.7.26
+      restart: always
+      command: --default-authentication-plugin=mysql_native_password
+      environment:
+         MYSQL_DATABASE: productivity_db_nutrition
+         MYSQL_USER: admin
+         MYSQL_PASSWORD: admin
+         MYSQL_ROOT_PASSWORD: admin
+      networks:
+         - productivity_backend_network
+      volumes:
+         - ./nutrition_mysql/data:/var/lib/mysql
+         - ./nutrition_mysql/init:/docker-entrypoint-initdb.d/:ro
+         - ./nutrition_mysql/init_data:/tmp/data
+
+networks:
+   productivity_frontend_network:
+   productivity_backend_network:
