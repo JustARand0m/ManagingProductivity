@@ -71,6 +71,20 @@ CREATE TABLE trainingsPlanRows (
     startingWeight INT
 );
 
+CREATE TABLE Folders (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    userId INT,
+    name VARCHAR(255);
+);
+
+CREATE TABLE Summaries (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    userId INT,
+    folderId INT,
+    topic VARCHAR(255),
+    content LONGTEXT
+);
+
 CREATE TABLE repeatitionsDone (
     id INT NOT NULL,
     repeatition INT
