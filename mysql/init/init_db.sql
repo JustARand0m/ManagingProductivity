@@ -74,7 +74,7 @@ CREATE TABLE trainingsPlanRows (
 CREATE TABLE Folders (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     userId INT,
-    name VARCHAR(255);
+    name VARCHAR(255)
 );
 
 CREATE TABLE Summaries (
