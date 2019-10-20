@@ -1,0 +1,6 @@
+docker-compose -f docker-compose-prod.yml build
+docker login
+docker tag productivity_frontend_production justarandom/productivity_frontend_production
+docker tag productivity_backend_production justarandom/productivity_backend_production
+docker push justarandom/productivity_backend_production
+docker push justarandom/productivity_frontend_production
