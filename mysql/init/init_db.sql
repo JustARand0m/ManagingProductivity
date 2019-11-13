@@ -61,6 +61,7 @@ CREATE TABLE todos (
 
 CREATE TABLE trainingsPlanRows (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    userId INT,
     phase INT,
     dayNr INT,
     muscle VARCHAR(255),
@@ -87,12 +88,14 @@ CREATE TABLE Summaries (
 
 CREATE TABLE repeatitionsDone (
     id INT NOT NULL,
-    repeatition INT
+    repeatition INT,
+    userId INT
 );
 
 CREATE TABLE weightsUsed (
     id INT NOT NULL,
-    weightUsed INT
+    weightUsed INT,
+    userId INT
 );
 
 ALTER TABLE Summaries MODIFY COLUMN content LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
