@@ -65,9 +65,9 @@ CREATE TABLE trainingsPlanRows (
     phase INT,
     dayNr INT,
     muscle VARCHAR(255),
-    excercise VARCHAR(255),
+    exercise VARCHAR(255),
     amountOfSets INT,
-    repeatitions INT,
+    repetitions INT,
     pauseInbetween INT,
     startingWeight INT
 );
@@ -86,9 +86,9 @@ CREATE TABLE Summaries (
     content LONGTEXT
 );
 
-CREATE TABLE repeatitionsDone (
+CREATE TABLE repetitionsDone (
     id INT NOT NULL,
-    repeatition INT,
+    repetition INT,
     userId INT
 );
 
